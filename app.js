@@ -22,7 +22,7 @@ app.post('/', function(request, response) {
       var options = request.body.install.options
       var amount = promiseResponse.data[0].balance.amount
       options.bitcoin = parseFloat(amount)
-      response.status(200).send({install: request.body.install, proceed: true})
+      response.json({install: request.body.install, proceed: true})
     }
   })
 })
